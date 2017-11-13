@@ -55,7 +55,7 @@
 	};
 
 	var open = function(url) {
-		if (getUserAgent() == 'IOS') window.open(url, '_system') 
+		if (getUserAgent() == 'iOS') window.open(url, '_system'); 
 		else window.location = url;
 	};
 
