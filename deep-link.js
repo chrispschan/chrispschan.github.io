@@ -23,12 +23,12 @@
 			},
 
 			android: {
-				store_prefix: 'https://play.google.com/store/apps/details?id=',
+				store_prefix: '',//'https://play.google.com/store/apps/details?id=',
 				test: /Android/i
 			},
 
 			iOS: {
-				store_prefix: 'https://itunes.apple.com/bm/app/',
+				store_prefix: 'itms-apps://itunes.apple.com/us/app/',//'https://itunes.apple.com/bm/app/',
 				test: /iPhone|iPad|iPod/i
 			}
 		};
