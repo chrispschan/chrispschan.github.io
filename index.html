@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>CLP</title>
+	<style type="text/css">
+		/*.deepLink {display: none;}*/
+	</style>
+</head>
+<body>
+	<a id="deepLink" class="deepLink" href="https://services.clp.com.hk/download.html" data-app="clphk://external.deeplink" data-store-android="com.cherrypicks.clp" data-store-ios="clp-hong-kong/id450725907">deep link</a>
+
+	<script src="deep-link.js" type="text/javascript"></script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
+				path = window.location.href.split("?");
+
+			if (path.length > 1) {
+				deepLink += '?' + path[1];
+			}
+
+			document.getElementById("deepLink").setAttribute('data-app', deepLink);
+
+			// console.log(document.getElementById("deepLink").getAttribute('data-app'));
+
+			setTimeout(function(){document.getElementById("deepLink").click()}, 1000);
+		});
+	</script>
+</body>
+</html>
