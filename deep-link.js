@@ -55,7 +55,8 @@
 	};
 
 	var open = function(url) {
-		window.location = url;
+		if (getUserAgent() == 'IOS') window.open(url, '_system') 
+		else window.location = url;
 	};
 
 	var handleAndroidBrowsers = function(app, store, href, scheme) {
