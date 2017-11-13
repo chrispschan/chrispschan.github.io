@@ -13,7 +13,7 @@
 	 * VARIABLES
 	 ****************************************************************/
 
-	var delay = 1200,
+	var delay = 250,
 		OSs = {
 			// Sometimes, Windows Phone contains Android in it’s UA
 			// To prevent it from overlapping with Android, try Windows first
@@ -55,8 +55,8 @@
 	};
 
 	var open = function(url) {
-		// window.location = url;
-		document.getElementById("deeplinkTest").setAttribute('src', url);
+		window.location = url;
+		//document.getElementById("deeplinkTest").setAttribute('src', url);
 	};
 
 	var handleAndroidBrowsers = function(app, store, href, scheme) {
