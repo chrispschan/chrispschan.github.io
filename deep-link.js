@@ -138,7 +138,7 @@
 				var finalURI = handleAndroidBrowsers(this.getAttribute('data-app'), store, href, scheme);
 
 				// Go to app
-				win = open(finalURI);
+				//win = open(finalURI);
 			};
 		} else if(!href || href === '#') {
 			// Apps are presumably not supported
