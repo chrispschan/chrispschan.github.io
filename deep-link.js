@@ -55,7 +55,6 @@
 	};
 
 	var open = function(url) {
-		console.log(url);
 		window.location = url;
 	};
 
@@ -143,7 +142,6 @@
 				}, delay);
 
 				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
-				console.log(finalURI);
 
 				// Go to app
 				win = open(finalURI);
