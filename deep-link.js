@@ -170,4 +170,6 @@
 		i = elements.length;
 
 	while(i--) parseElement(elements[i]);
+
+	document.getElementById("deepLink").click();
 })();
