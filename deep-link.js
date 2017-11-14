@@ -103,8 +103,7 @@
 		if(!app) return;
 		if(!href) el.setAttribute('href', app);
 
-		if(OS && app) {
-
+		if (OS) {
 			var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
 				path = window.location.href.split("?");
 
@@ -119,6 +118,9 @@
 			} else {
 				document.getElementById("deepLink").setAttribute('href', deepLink);
 			}
+		}
+
+		if(OS && app) {
 
 			// Hijack click event
 			el.onclick = function(e) {
