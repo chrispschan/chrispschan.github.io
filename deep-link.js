@@ -55,7 +55,8 @@
 	};
 
 	var open = function(url) {
-		window.location = url;
+		window.open(url, '_self', false); 
+		// window.location = url;
 	};
 
 	var handleAndroidBrowsers = function(app, store, href, scheme) {
@@ -142,7 +143,7 @@
 				}, delay);
 
 				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
-				finalURI = 'http://google.com';
+				// finalURI = 'http://google.com';
 
 				// Go to app
 				win = open(finalURI);
