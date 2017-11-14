@@ -15,7 +15,7 @@
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
-			setTimeout(function(){document.getElementById("deepLink").click();}, 2000);
+			setTimeout(function(){document.getElementById("deepLink").click();document.getElementById("deepLink").innerHTML = 'clicked';}, 2000);
 		});
 	</script>
 </body>
