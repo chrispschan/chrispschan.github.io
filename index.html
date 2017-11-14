@@ -32,7 +32,8 @@
 
 			if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
 				document.getElementById("deepLink").setAttribute('href', deepLink);
-				document.getElementById("deepLink").click();
+				if (navigator.userAgent.match(/Android/i)) setTimeout(function() {document.getElementById("deepLink").click();}, 1000);
+				else document.getElementById("deepLink").click();
 
 				window.location = test;
 			}
