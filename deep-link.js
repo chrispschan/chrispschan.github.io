@@ -114,8 +114,6 @@
 				var start = getTime();
 				clicked = true;
 
-				el.deepLinkClicked = true;
-
 				// Timeout to detect if the link worked
 				timeout = setTimeout(function() {
 					// Check if any of the values are unset
@@ -141,6 +139,8 @@
 				if (el.deepLinkClicked && OS == "iOS") finalURI = window.location;
 				// Go to app
 				win = open(finalURI);
+
+				el.deepLinkClicked = true;
 			};
 		} else if(!href || href === '#') {
 			// Apps are presumably not supported
