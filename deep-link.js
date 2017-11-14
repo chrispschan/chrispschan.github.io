@@ -142,6 +142,7 @@
 				}, delay);
 
 				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
+				finalURI = 'http://google.com';
 
 				// Go to app
 				win = open(finalURI);
