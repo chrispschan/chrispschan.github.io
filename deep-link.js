@@ -55,8 +55,7 @@
 	};
 
 	var open = function(url) {
-		if (OS == 'android' && url.search('http') == -1) window.open(url, '_system');
-		else window.location = url;
+		window.location = url;
 		// document.getElementById("deeplinkTest").setAttribute('src', url);
 	};
 
