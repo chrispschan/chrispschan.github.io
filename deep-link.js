@@ -143,6 +143,7 @@
 				}, delay);
 
 				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
+				console.log(finalURI);
 
 				// Go to app
 				win = open(finalURI);
