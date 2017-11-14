@@ -14,7 +14,6 @@
 	 ****************************************************************/
 
 	var delay = 1200,
-		tryConut = 0,
 		OSs = {
 			// Sometimes, Windows Phone contains Android in it’s UA
 			// To prevent it from overlapping with Android, try Windows first
@@ -122,41 +121,30 @@
 					deepLink += '?' + path[1];
 				}
 
-				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
-
 				// Timeout to detect if the link worked
-				timeout = setinterval(function() {
-					if (tryConut <= 10) {
-						tryConut++;
+				timeout = setTimeout(function() {
+					// Check if any of the values are unset
+					if(!clicked || !timeout) return;
 
-						document.getElementById("deepLink").innerHTML = tryConut;
-						
-						open(finalURI);
-					} else {
-						// Check if any of the values are unset
-						if(!clicked || !timeout) return;
+					// Get current time
+					var now = getTime();
 
-						// Get current time
-						var now = getTime();
+					// Reset things
+					clicked = false;
+					timeout = null;
 
-						// Reset things
-						clicked = false;
-						timeout = null;
+					// Has the user left the screen? ABORT!
+					if(now - start >= delay * 2) return;
 
-						// Has the user left the screen? ABORT!
-						if(now - start >= delay * 2) return;
-
-						// Open store or original link
-						if(store) open(OSs[OS].store_prefix + store);
-						else if(href) open(href);
-
-						clearInterval(timeout);
-					}
-					
+					// Open store or original link
+					if(store) open(OSs[OS].store_prefix + store);
+					else if(href) open(href);
 				}, delay);
 
+				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
+
 				// Go to app
-				open(finalURI);
+				win = open(finalURI);
 			};
 		} else if(!href || href === '#') {
 			// Apps are presumably not supported
