@@ -56,7 +56,6 @@
 
 	var open = function(url) {
 		window.location = url;
-		//document.getElementById("deeplinkTest").setAttribute('src', url);
 	};
 
 	var handleAndroidBrowsers = function(app, store, href, scheme) {
@@ -145,7 +144,7 @@
 				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
 
 				// Go to app
-				//win = open(finalURI);
+				win = open(finalURI);
 			};
 		} else if(!href || href === '#') {
 			// Apps are presumably not supported
