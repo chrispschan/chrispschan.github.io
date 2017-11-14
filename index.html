@@ -32,11 +32,9 @@
 
 			if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
 				document.getElementById("deepLink").setAttribute('href', deepLink);
-				if (navigator.userAgent.match(/Android/i)) setTimeout(function() {document.getElementById("deepLink").click();}, 5000);
-				else document.getElementById("deepLink").click();
-
-				window.location = test;
 			}
+
+			document.getElementById("deepLink").click();
 		});
 	</script>
 </body>
