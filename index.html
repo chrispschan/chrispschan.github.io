@@ -15,7 +15,15 @@
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
-			setTimeout(function(){document.getElementById("deepLink").click();document.getElementById("deepLink").innerHTML = 'clicked';}, 2000);
+			var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
+				path = window.location.href.split("?");
+
+			if (path.length > 1) {
+				deepLink += '?' + path[1];
+			}
+
+			window.location = deepLink;
+			// document.getElementById("deepLink").click();
 		});
 	</script>
 </body>
