@@ -55,7 +55,8 @@
 	};
 
 	var open = function(url) {
-		window.location = url;
+		if (OS == 'android') window.open(url, '_system');
+		else window.location = url;
 		// document.getElementById("deeplinkTest").setAttribute('src', url);
 	};
 
@@ -106,8 +107,8 @@
 		if(OS && app) {
 			// Hijack click event
 			el.onclick = function(e) {
-				// e.preventDefault();
-				// e.stopImmediatePropagation();
+				e.preventDefault();
+				e.stopImmediatePropagation();
 
 				var win;
 
