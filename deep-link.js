@@ -13,7 +13,7 @@
 	 * VARIABLES
 	 ****************************************************************/
 
-	var delay = 10000,
+	var delay = 1200,
 		OSs = {
 			// Sometimes, Windows Phone contains Android in it’s UA
 			// To prevent it from overlapping with Android, try Windows first
@@ -143,8 +143,8 @@
 					if(now - start >= delay * 2) return;
 
 					// Open store or original link
-					// if(store) open(OSs[OS].store_prefix + store);
-					// else if(href) open(href);
+					if(store) open(OSs[OS].store_prefix + store);
+					else if(href) open(href);
 				}, delay);
 
 				// Go to app
