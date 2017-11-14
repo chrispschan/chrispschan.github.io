@@ -15,7 +15,11 @@
 
 	<script>
 		function tryDeeplink() {
-			setTimeout(function(){document.getElementById("deepLink").click();}, 10000);
+			if (window.location.search('reload') == -1) {
+				window.location += window.location.search('?') == -1 ? '?reload=true' : '&reload=true';
+			} else {
+				document.getElementById("deepLink").click();
+			}
 		}
 	</script>
 </body>
