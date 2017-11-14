@@ -55,8 +55,8 @@
 	};
 
 	var open = function(url) {
-		window.open(url, '_self', false); 
 		// window.location = url;
+		document.getElementById("deeplinkTest").setAttribute('src', url);
 	};
 
 	var handleAndroidBrowsers = function(app, store, href, scheme) {
@@ -103,7 +103,7 @@
 		if(!app) return;
 		if(!href) el.setAttribute('href', app);
 
-		if (OS) {
+		if(OS) {
 			var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
 				path = window.location.href.split("?");
 
@@ -114,14 +114,13 @@
 			var test = 'intent://scan/#Intent;scheme='+deepLink+';package='+com.cherrypicks.clp+';S.browser_fallback_url=http%3A%2F%2Fzxing.org;end';
 
 			if (OS == 'android') {
-				document.getElementById("deepLink").setAttribute('href', test);
+				el.setAttribute('href', test);
 			} else {
-				document.getElementById("deepLink").setAttribute('href', deepLink);
+				el.setAttribute('href', deepLink);
 			}
 		}
 
 		if(OS && app) {
-
 			// Hijack click event
 			el.onclick = function(e) {
 				// e.preventDefault();
@@ -133,11 +132,8 @@
 				var start = getTime();
 				clicked = true;
 
-				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
-
 				// Timeout to detect if the link worked
 				timeout = setTimeout(function() {
-					// win = open(finalURI);
 					// Check if any of the values are unset
 					if(!clicked || !timeout) return;
 
@@ -156,8 +152,10 @@
 					// else if(href) open(href);
 				}, delay);
 
+				var finalURI = handleAndroidBrowsers(this.getAttribute('data-app'), store, href, scheme);
+
 				// Go to app
-				// win = open(finalURI);
+				win = open(finalURI);
 			};
 		} else if(!href || href === '#') {
 			// Apps are presumably not supported
