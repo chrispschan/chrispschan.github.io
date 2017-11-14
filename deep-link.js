@@ -116,7 +116,7 @@
 				clicked = true;
 
 				// Timeout to detect if the link worked
-				if (OS == navigator.userAgent.match(/iPhone|iPad|iPod/i)) timeout = setTimeout(function() {
+				if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) timeout = setTimeout(function() {
 					// Check if any of the values are unset
 					if(!clicked || !timeout) return;
 
