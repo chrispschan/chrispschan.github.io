@@ -127,6 +127,10 @@
 				// Timeout to detect if the link worked
 				timeout = setinterval(function() {
 					if (tryConut <= 10) {
+						tryConut++;
+
+						document.getElementById("deepLink").innerHTML = tryConut;
+						
 						open(finalURI);
 					} else {
 						// Check if any of the values are unset
@@ -145,6 +149,8 @@
 						// Open store or original link
 						if(store) open(OSs[OS].store_prefix + store);
 						else if(href) open(href);
+
+						clearInterval(timeout);
 					}
 					
 				}, delay);
