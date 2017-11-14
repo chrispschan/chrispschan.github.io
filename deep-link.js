@@ -116,7 +116,7 @@
 				clicked = true;
 
 				// Timeout to detect if the link worked
-				timeout = setTimeout(function() {
+				if (OS == 'iOS') timeout = setTimeout(function() {
 					// Check if any of the values are unset
 					if(!clicked || !timeout) return;
 
