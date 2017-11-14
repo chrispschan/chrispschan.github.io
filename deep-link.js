@@ -104,24 +104,26 @@
 		if(!app) return;
 		if(!href) el.setAttribute('href', app);
 
+		var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
+			path = window.location.href.split("?");
+
+		if (path.length > 1) {
+			deepLink += '?' + path[1];
+		}
+
+		document.getElementById("deepLink").setAttribute('href', deepLink);
+
 		if(OS && app) {
 			// Hijack click event
 			el.onclick = function(e) {
-				e.preventDefault();
-				e.stopImmediatePropagation();
+				// e.preventDefault();
+				// e.stopImmediatePropagation();
 
 				var win;
 
 				// Store start time
 				var start = getTime();
 				clicked = true;
-
-				var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
-					path = window.location.href.split("?");
-
-				if (path.length > 1) {
-					deepLink += '?' + path[1];
-				}
 
 				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
 
@@ -147,7 +149,7 @@
 				}, delay);
 
 				// Go to app
-				win = open(finalURI);
+				// win = open(finalURI);
 			};
 		} else if(!href || href === '#') {
 			// Apps are presumably not supported
