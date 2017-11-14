@@ -23,12 +23,12 @@
 			},
 
 			android: {
-				store_prefix: 'market://details?=', //'https://play.google.com/store/apps/details?id=',
+				store_prefix: 'https://play.google.com/store/apps/details?id=',
 				test: /Android/i
 			},
 
 			iOS: {
-				store_prefix: 'itms-apps://itunes.apple.com/hk/app/',//'https://itunes.apple.com/bm/app/',
+				store_prefix: 'https://itunes.apple.com/bm/app/',
 				test: /iPhone|iPad|iPod/i
 			}
 		};
@@ -55,20 +55,19 @@
 	};
 
 	var open = function(url) {
-		window.location = url;
-		// document.getElementById("deeplinkTest").setAttribute('src', url);
+		window.location.href = url;
 	};
 
 	var handleAndroidBrowsers = function(app, store, href, scheme) {
 	  // Android Mobile
-	  // var isAndroidMobile = navigator.userAgent.indexOf('Android') > -1 &&
-	  //                       navigator.userAgent.indexOf('Mozilla/5.0') > -1 &&
-	  //                       navigator.userAgent.indexOf('AppleWebKit') > -1;
+	  var isAndroidMobile = navigator.userAgent.indexOf('Android') > -1 &&
+	                        navigator.userAgent.indexOf('Mozilla/5.0') > -1 &&
+	                        navigator.userAgent.indexOf('AppleWebKit') > -1;
 	  // Android Browser (not Chrome)
-	  // var regExAppleWebKit = new RegExp(/AppleWebKit\/([\d.]+)/);
-	  // var resultAppleWebKitRegEx = regExAppleWebKit.exec(navigator.userAgent);
-	  // var appleWebKitVersion = (resultAppleWebKitRegEx === null ? null : parseFloat(regExAppleWebKit.exec(navigator.userAgent)[1]));
-	  // var isAndroidBrowser = isAndroidMobile && appleWebKitVersion !== null && appleWebKitVersion > 500;
+	  var regExAppleWebKit = new RegExp(/AppleWebKit\/([\d.]+)/);
+	  var resultAppleWebKitRegEx = regExAppleWebKit.exec(navigator.userAgent);
+	  var appleWebKitVersion = (resultAppleWebKitRegEx === null ? null : parseFloat(regExAppleWebKit.exec(navigator.userAgent)[1]));
+	  var isAndroidBrowser = isAndroidMobile && appleWebKitVersion !== null && appleWebKitVersion > 500;
 
 	  // if(isAndroidBrowser) {
 	  //   return 'intent:' + app.split(':')[1] + '#Intent;scheme=' + scheme + ';package=' +
@@ -106,8 +105,8 @@
 		if(OS && app) {
 			// Hijack click event
 			el.onclick = function(e) {
-				// e.preventDefault();
-				// e.stopImmediatePropagation();
+				e.preventDefault();
+				e.stopImmediatePropagation();
 
 				var win;
 
@@ -131,13 +130,14 @@
 					if(now - start >= delay * 2) return;
 
 					// Open store or original link
-					open(OSs[OS].store_prefix + store);
+					if(store) open(OSs[OS].store_prefix + store);
+					else if(href) open(href);
 				}, delay);
 
-				// var finalURI = handleAndroidBrowsers(this.getAttribute('data-app'), store, href, scheme);
+				var finalURI = handleAndroidBrowsers(el.getAttribute('data-app'), store, href, scheme);
 
 				// Go to app
-				// win = open(finalURI);
+				win = open(finalURI);
 			};
 		} else if(!href || href === '#') {
 			// Apps are presumably not supported
