@@ -17,6 +17,7 @@
 		function tryDeeplink() {
 			if (window.location.search('reload') == -1) {
 				window.location += window.location.search('?') == -1 ? '?reload=true' : '&reload=true';
+				location.reload();
 			} else {
 				document.getElementById("deepLink").click();
 			}
