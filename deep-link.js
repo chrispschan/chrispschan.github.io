@@ -103,16 +103,23 @@
 		if(!app) return;
 		if(!href) el.setAttribute('href', app);
 
-		var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
-			path = window.location.href.split("?");
-
-		if (path.length > 1) {
-			deepLink += '?' + path[1];
-		}
-
-		document.getElementById("deepLink").setAttribute('href', deepLink);
-
 		if(OS && app) {
+
+			var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
+				path = window.location.href.split("?");
+
+			if (path.length > 1) {
+				deepLink += '?' + path[1];
+			}
+
+			var test = 'intent://scan/#Intent;scheme='+deepLink+';package='+com.cherrypicks.clp+';S.browser_fallback_url=http%3A%2F%2Fzxing.org;end';
+
+			if (OS == 'android') {
+				document.getElementById("deepLink").setAttribute('href', test);
+			} else {
+				document.getElementById("deepLink").setAttribute('href', deepLink);
+			}
+
 			// Hijack click event
 			el.onclick = function(e) {
 				// e.preventDefault();
@@ -143,8 +150,8 @@
 					if(now - start >= delay * 2) return;
 
 					// Open store or original link
-					if(store) open(OSs[OS].store_prefix + store);
-					else if(href) open(href);
+					// if(store) open(OSs[OS].store_prefix + store);
+					// else if(href) open(href);
 				}, delay);
 
 				// Go to app
