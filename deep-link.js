@@ -103,23 +103,6 @@
 		if(!app) return;
 		if(!href) el.setAttribute('href', app);
 
-		if(OS) {
-			var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
-				path = window.location.href.split("?");
-
-			if (path.length > 1) {
-				deepLink += '?' + path[1];
-			}
-
-			var test = 'intent://scan/#Intent;scheme='+deepLink+';package='+com.cherrypicks.clp+';S.browser_fallback_url=http%3A%2F%2Fzxing.org;end';
-
-			if (OS == 'android') {
-				el.setAttribute('href', test);
-			} else {
-				el.setAttribute('href', deepLink);
-			}
-		}
-
 		if(OS && app) {
 			// Hijack click event
 			el.onclick = function(e) {

@@ -23,6 +23,19 @@
 		}
 
 		ready(function() {
+				var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
+					path = window.location.href.split("?");
+
+				if (path.length > 1) {
+					deepLink += '?' + path[1];
+				}
+
+			if(navigator.userAgent.match(/Android/i)) {
+				var test = 'intent://scan/#Intent;scheme='+deepLink+';package='+com.cherrypicks.clp+';S.browser_fallback_url=http%3A%2F%2Fzxing.org;end';
+				document.getElementById("deepLink").setAttribute('href', test);
+			} else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)){
+				document.getElementById("deepLink").setAttribute('href', deepLink);
+			}
 			document.getElementById("deepLink").click();
 		});
 	</script>
