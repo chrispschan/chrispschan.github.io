@@ -13,7 +13,7 @@
 	 * VARIABLES
 	 ****************************************************************/
 
-	var delay = 250,
+	var delay = 1200,
 		OSs = {
 			// Sometimes, Windows Phone contains Android in it’s UA
 			// To prevent it from overlapping with Android, try Windows first
