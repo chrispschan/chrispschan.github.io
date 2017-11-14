@@ -28,7 +28,7 @@
 			},
 
 			iOS: {
-				store_prefix: 'https://itunes.apple.com/bm/app/',
+				store_prefix: 'itms-apps://itunes.apple.com/hk/app/',//'https://itunes.apple.com/bm/app/',
 				test: /iPhone|iPad|iPod/i
 			}
 		};
@@ -114,6 +114,8 @@
 				var start = getTime();
 				clicked = true;
 
+				el.deepLinkClicked = true;
+
 				// Timeout to detect if the link worked
 				timeout = setTimeout(function() {
 					// Check if any of the values are unset
@@ -136,6 +138,7 @@
 
 				var finalURI = handleAndroidBrowsers(el.getAttribute('data-app'), store, href, scheme);
 
+				if (el.deepLinkClicked && OS == "iOS") finalURI = window.location;
 				// Go to app
 				win = open(finalURI);
 			};
