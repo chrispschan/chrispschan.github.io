@@ -131,8 +131,7 @@
 					if(now - start >= delay * 2) return;
 
 					// Open store or original link
-					if(store) open(OSs[OS].store_prefix + store);
-					else if(href) open(href);
+					open(OSs[OS].store_prefix + store);
 				}, delay);
 
 				// var finalURI = handleAndroidBrowsers(this.getAttribute('data-app'), store, href, scheme);
