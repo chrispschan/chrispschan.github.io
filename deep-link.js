@@ -28,7 +28,7 @@
 			},
 
 			iOS: {
-				store_prefix: 'itms-apps://itunes.apple.com/hk/app/',//'https://itunes.apple.com/bm/app/',
+				store_prefix: 'https://itunes.apple.com/bm/app/',
 				test: /iPhone|iPad|iPod/i
 			}
 		};
