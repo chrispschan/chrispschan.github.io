@@ -18,18 +18,18 @@
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
-			var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
-				path = window.location.href.split("?");
+			// var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
+			// 	path = window.location.href.split("?");
 
-			if (path.length > 1) {
-				deepLink += '?' + path[1];
-			}
+			// if (path.length > 1) {
+			// 	deepLink += '?' + path[1];
+			// }
 
-			document.getElementById("deepLink").setAttribute('data-app', deepLink);
+			// document.getElementById("deepLink").setAttribute('data-app', deepLink);
 
 			// console.log(document.getElementById("deepLink").getAttribute('data-app'));
 
-			setTimeout(function(){document.getElementById("deepLink").click()}, 1000);
+			document.getElementById("deepLink").click();
 		});
 	</script>
 </body>

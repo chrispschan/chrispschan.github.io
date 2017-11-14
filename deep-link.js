@@ -115,6 +115,13 @@
 				var start = getTime();
 				clicked = true;
 
+				var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
+					path = window.location.href.split("?");
+
+				if (path.length > 1) {
+					deepLink += '?' + path[1];
+				}
+
 				// Timeout to detect if the link worked
 				timeout = setTimeout(function() {
 					// Check if any of the values are unset
@@ -135,7 +142,7 @@
 					else if(href) open(href);
 				}, delay);
 
-				var finalURI = handleAndroidBrowsers(this.getAttribute('data-app'), store, href, scheme);
+				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
 
 				// Go to app
 				//win = open(finalURI);
