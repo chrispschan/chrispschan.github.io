@@ -30,15 +30,11 @@
 					deepLink += '?' + path[1];
 				}
 
-			if(navigator.userAgent.match(/Android/i)) {
-				var test = 'intent://scan/#Intent;scheme='+deepLink+';package='+com.cherrypicks.clp+';S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.cherrypicks.clp;end';
-				document.getElementById("deepLink").setAttribute('href', test);
+			if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+				document.getElementById("deepLink").setAttribute('href', deepLink);
+				document.getElementById("deepLink").click();
 
 				window.location = test;
-			} else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)){
-				document.getElementById("deepLink").setAttribute('href', deepLink);
-
-				document.getElementById("deepLink").click();
 			}
 		});
 	</script>
