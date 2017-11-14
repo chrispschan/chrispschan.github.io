@@ -55,6 +55,7 @@
 	};
 
 	var open = function(url) {
+		console.log(url);
 		window.location = url;
 	};
 
