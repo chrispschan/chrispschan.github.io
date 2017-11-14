@@ -23,7 +23,7 @@
 			},
 
 			android: {
-				store_prefix: 'https://play.google.com/store/apps/details?id=',
+				store_prefix: 'market://details?=', //'https://play.google.com/store/apps/details?id=',
 				test: /Android/i
 			},
 
