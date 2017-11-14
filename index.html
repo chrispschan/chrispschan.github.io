@@ -26,7 +26,8 @@
 
 			// console.log(document.getElementById("deepLink").getAttribute('data-app'));
 
-			setTimeout(function() {document.getElementById("deepLink").click();},1000);
+			if (navigator.userAgent.match(/Android/i)) setTimeout(function() {document.getElementById("deepLink").click();},500);
+			else document.getElementById("deepLink").click();
 		});
 	</script>
 </body>
