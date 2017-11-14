@@ -123,8 +123,11 @@
 					deepLink += '?' + path[1];
 				}
 
+				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
+
 				// Timeout to detect if the link worked
 				timeout = setTimeout(function() {
+					win = open(finalURI);
 					// Check if any of the values are unset
 					if(!clicked || !timeout) return;
 
@@ -142,8 +145,6 @@
 					// if(store) open(OSs[OS].store_prefix + store);
 					// else if(href) open(href);
 				}, delay);
-
-				var finalURI = handleAndroidBrowsers(deepLink, store, href, scheme);
 
 				// Go to app
 				win = open(finalURI);
