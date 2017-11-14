@@ -55,7 +55,6 @@
 	};
 
 	var open = function(url) {
-		console.log(url);
 		window.open(url, '_self', false); 
 		// window.location = url;
 	};
@@ -130,7 +129,6 @@
 				// Timeout to detect if the link worked
 				timeout = setTimeout(function() {
 					// win = open(finalURI);
-					el.click();
 					// Check if any of the values are unset
 					if(!clicked || !timeout) return;
 
