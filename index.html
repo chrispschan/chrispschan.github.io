@@ -20,6 +20,11 @@
 
 			if (path.length > 1) {
 				deepLink += '?' + path[1];
+
+				if (path[1].search('section=smartshopping')) {
+					document.getElementById("deepLink").removeAttribute('data-store-android');
+					document.getElementById("deepLink").removeAttribute('data-store-ios');
+				}
 			}
 
 			document.getElementById("deepLink").setAttribute('data-app', deepLink);
