@@ -108,6 +108,19 @@
 				e.preventDefault();
 				e.stopImmediatePropagation();
 
+				href = el.getAttribute('href');
+				app = (
+					el.getAttribute('data-app-' + OSAttr) ||
+					el.getAttribute('data-app')
+				);
+				store = (
+					el.getAttribute('data-store-' + OSAttr) ||
+					el.getAttribute('data-store')
+				);
+				scheme = (
+					el.getAttribute('data-android-scheme')
+				);
+
 				var win;
 
 				// Store start time
@@ -130,9 +143,8 @@
 					if(now - start >= delay * 2) return;
 
 					// Open store or original link
-					console.log(store);
-					// if(store) open(OSs[OS].store_prefix + store);
-					// else if(href) open(href);
+					if(store) open(OSs[OS].store_prefix + store);
+					else if(href) open(href);
 				}, delay);
 
 				var finalURI = handleAndroidBrowsers(el.getAttribute('data-app'), store, href, scheme);
