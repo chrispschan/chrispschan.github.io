@@ -104,10 +104,10 @@
 
 				var win;
 
-				store = (
+				var store = (
 					el.getAttribute('data-store-' + OSAttr) ||
 					el.getAttribute('data-store')
-				);
+				),
 				href = el.getAttribute('href');
 
 				console.log(store);
