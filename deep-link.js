@@ -108,19 +108,6 @@
 				e.preventDefault();
 				e.stopImmediatePropagation();
 
-				href = e.target.getAttribute('href');
-				app = (
-					e.target.getAttribute('data-app-' + OSAttr) ||
-					e.target.getAttribute('data-app')
-				);
-				store = (
-					e.target.getAttribute('data-store-' + OSAttr) ||
-					e.target.getAttribute('data-store')
-				);
-				scheme = (
-					e.target.getAttribute('data-android-scheme')
-				);
-
 				var win;
 
 				// Store start time
@@ -147,13 +134,13 @@
 					else if(href) open(href);
 				}, delay);
 
-				var finalURI = handleAndroidBrowsers(e.target.getAttribute('data-app'), store, href, scheme);
+				var finalURI = handleAndroidBrowsers(el.getAttribute('data-app'), store, href, scheme);
 
-				if (e.target.deepLinkClicked && OS == "iOS") finalURI = window.location;
+				if (el.deepLinkClicked && OS == "iOS") finalURI = window.location;
 				// Go to app
 				win = open(finalURI);
 
-				e.target.deepLinkClicked = true;
+				el.deepLinkClicked = true;
 			};
 		} else if(!href || href === '#') {
 			// Apps are presumably not supported
