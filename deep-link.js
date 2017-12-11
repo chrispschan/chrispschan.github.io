@@ -84,9 +84,15 @@
 		var clicked, timeout,
 			OS = getUserAgent(),
 			OSAttr = OS.toLowerCase(),
+
+			href = el.getAttribute('href'),
 			app = (
 				el.getAttribute('data-app-' + OSAttr) ||
 				el.getAttribute('data-app')
+			),
+			store = (
+				el.getAttribute('data-store-' + OSAttr) ||
+				el.getAttribute('data-store')
 			),
 			scheme = (
 				el.getAttribute('data-android-scheme')
@@ -103,14 +109,6 @@
 				e.stopImmediatePropagation();
 
 				var win;
-
-				var store = (
-					el.getAttribute('data-store-' + OSAttr) ||
-					el.getAttribute('data-store')
-				),
-				href = el.getAttribute('href');
-
-				console.log(store);
 
 				// Store start time
 				var start = getTime();
