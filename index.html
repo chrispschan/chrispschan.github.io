@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<title>CLP</title>
 	<style type="text/css">
-		/*.deepLink {display: none;}*/
+		.deepLink {display: none;}
 	</style>
 </head>
 <body>
@@ -16,10 +16,27 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			var deepLink = document.getElementById("deepLink").getAttribute('data-app'),
-				path = window.location.href.split("?");
+				path = window.location.href.split("?"),
+				parameters,
+				parametersArr = {};
 
 			if (path.length > 1) {
-				deepLink += '?' + path[1];
+				deepLink += '?' + path[1].replace(/ /g, "").replace(/%20/g, "");
+				parameters = path[1].split('&');
+
+				for (var i = 0; i < parameters.length; i++) {
+					parameters[i] = parameters[i].split('=');
+
+					parametersArr[parameters[i][0]] = parameters[i][1];
+				}
+
+				if (parametersArr.section === 'smartshopping') {
+					document.getElementById("deepLink").removeAttribute('data-store-android');
+					document.getElementById("deepLink").removeAttribute('data-store-ios');
+					document.getElementById("deepLink").setAttribute('href', 'https://store.clp.com.hk/shoppings/index.jsp');
+				}
+
+				console.log(deepLink);
 			}
 
 			document.getElementById("deepLink").setAttribute('data-app', deepLink);
