@@ -111,6 +111,8 @@
 					el.getAttribute('data-store')
 				);
 
+				console.log(store);
+
 				// Store start time
 				var start = getTime();
 				clicked = true;
