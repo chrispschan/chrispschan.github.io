@@ -108,17 +108,17 @@
 				e.preventDefault();
 				e.stopImmediatePropagation();
 
-				href = el.getAttribute('href');
+				href = e.target.getAttribute('href');
 				app = (
-					el.getAttribute('data-app-' + OSAttr) ||
-					el.getAttribute('data-app')
+					e.target.getAttribute('data-app-' + OSAttr) ||
+					e.target.getAttribute('data-app')
 				);
 				store = (
-					el.getAttribute('data-store-' + OSAttr) ||
-					el.getAttribute('data-store')
+					e.target.getAttribute('data-store-' + OSAttr) ||
+					e.target.getAttribute('data-store')
 				);
 				scheme = (
-					el.getAttribute('data-android-scheme')
+					e.target.getAttribute('data-android-scheme')
 				);
 
 				var win;
@@ -147,13 +147,13 @@
 					else if(href) open(href);
 				}, delay);
 
-				var finalURI = handleAndroidBrowsers(el.getAttribute('data-app'), store, href, scheme);
+				var finalURI = handleAndroidBrowsers(e.target.getAttribute('data-app'), store, href, scheme);
 
-				if (el.deepLinkClicked && OS == "iOS") finalURI = window.location;
+				if (e.target.deepLinkClicked && OS == "iOS") finalURI = window.location;
 				// Go to app
 				win = open(finalURI);
 
-				el.deepLinkClicked = true;
+				e.target.deepLinkClicked = true;
 			};
 		} else if(!href || href === '#') {
 			// Apps are presumably not supported
