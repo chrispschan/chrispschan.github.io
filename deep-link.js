@@ -130,6 +130,7 @@
 					if(now - start >= delay * 2) return;
 
 					// Open store or original link
+					console.log(store);
 					if(store) open(OSs[OS].store_prefix + store);
 					else if(href) open(href);
 				}, delay);
