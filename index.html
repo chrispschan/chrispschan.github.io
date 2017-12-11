@@ -21,7 +21,8 @@
 			if (path.length > 1) {
 				deepLink += '?' + path[1];
 
-				if (path[1].search('section=smartshopping')) {
+				if (path[1].search('section=smartshopping') !== -1) {
+					console.log('smartshopping');
 					document.getElementById("deepLink").removeAttribute('data-store-android');
 					document.getElementById("deepLink").removeAttribute('data-store-ios');
 				}
