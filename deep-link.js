@@ -108,6 +108,19 @@
 				e.preventDefault();
 				e.stopImmediatePropagation();
 
+				href = el.getAttribute('href');
+				app = (
+					el.getAttribute('data-app-' + OSAttr) ||
+					el.getAttribute('data-app')
+				);
+				store = (
+					el.getAttribute('data-store-' + OSAttr) ||
+					el.getAttribute('data-store')
+				);
+				scheme = (
+					el.getAttribute('data-android-scheme')
+				);
+
 				var win;
 
 				// Store start time
