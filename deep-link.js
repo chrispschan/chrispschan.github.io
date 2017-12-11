@@ -90,10 +90,6 @@
 				el.getAttribute('data-app-' + OSAttr) ||
 				el.getAttribute('data-app')
 			),
-			store = (
-				el.getAttribute('data-store-' + OSAttr) ||
-				el.getAttribute('data-store')
-			),
 			scheme = (
 				el.getAttribute('data-android-scheme')
 			);
@@ -109,6 +105,11 @@
 				e.stopImmediatePropagation();
 
 				var win;
+
+				store = (
+					el.getAttribute('data-store-' + OSAttr) ||
+					el.getAttribute('data-store')
+				);
 
 				// Store start time
 				var start = getTime();
@@ -130,7 +131,6 @@
 					if(now - start >= delay * 2) return;
 
 					// Open store or original link
-					console.log(store);
 					if(store) open(OSs[OS].store_prefix + store);
 					else if(href) open(href);
 				}, delay);
