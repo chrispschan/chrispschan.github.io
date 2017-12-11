@@ -84,8 +84,6 @@
 		var clicked, timeout,
 			OS = getUserAgent(),
 			OSAttr = OS.toLowerCase(),
-
-			href = el.getAttribute('href'),
 			app = (
 				el.getAttribute('data-app-' + OSAttr) ||
 				el.getAttribute('data-app')
@@ -110,6 +108,7 @@
 					el.getAttribute('data-store-' + OSAttr) ||
 					el.getAttribute('data-store')
 				);
+				href = el.getAttribute('href');
 
 				console.log(store);
 
