@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="apple-itunes-app" content="app-id=450725907">
+    <meta name="google-play-app" content="app-id=com.cherrypicks.clp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="smart-app-banner.css" type="text/css" media="screen">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="android-touch-icon" href="icon.png" />
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="smart-app-banner.js"></script>
+    <script type="text/javascript">
+      new SmartBanner({
+          daysHidden: 15,   // days to hide banner after close button is clicked (defaults to 15)
+          daysReminder: 90, // days to hide banner after "VIEW" button is clicked (defaults to 90)
+          appStoreLanguage: 'us', // language code for the App Store (defaults to user's browser language)
+          title: 'MyPage',
+          author: 'MyCompany LLC',
+          button: 'VIEW',
+          store: {
+              ios: 'On the App Store',
+              android: 'In Google Play',
+              windows: 'In Windows store'
+          },
+          price: {
+              ios: 'FREE',
+              android: 'FREE',
+              windows: 'FREE'
+          }
+          // , theme: '' // put platform type ('ios', 'android', etc.) here to force single theme on all device
+          // , icon: '' // full path to icon image if not using website icon image
+          // , force: 'ios' // Uncomment for platform emulation
+      });
+    </script>
+    
+</body>
+</html>
