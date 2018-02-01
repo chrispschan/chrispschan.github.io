@@ -31185,6 +31185,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var _ = __webpack_require__(12);
 var RX = __webpack_require__(0);
+var ModalPanel = __webpack_require__(114);
 var Styles = __webpack_require__(236);
 var WrapperView = (function (_super) {
     __extends(WrapperView, _super);
@@ -31197,175 +31198,127 @@ var WrapperView = (function (_super) {
                 _this.refs.content.setFocusLimited(_this._activeModal !== '');
         };
         _this.addModal = function (modals) {
-            // let _modals = this.state.modals ? this.state.modals : [],
-            //     _newModals = Array.isArray(modals) ? modals : [modals],
-            //     _index;
-            // for (let i = 0; i < _newModals.length; i++) {
-            //     _index = _.findIndex(_modals, {
-            //         modalId: _newModals[i].modalId
-            //     });
-            //     if (_index !== -1)
-            //         _modals[_index] = _newModals[i];
-            //     else {
-            //         _modals.push(_newModals[i]);
-            //     }
-            // }
-            // this.setState({
-            //     modals: _modals
-            // });
+            var _modals = _this.state.modals ? _this.state.modals : [], _newModals = Array.isArray(modals) ? modals : [modals], _index;
+            for (var i = 0; i < _newModals.length; i++) {
+                _index = _.findIndex(_modals, {
+                    modalId: _newModals[i].modalId
+                });
+                if (_index !== -1)
+                    _modals[_index] = _newModals[i];
+                else {
+                    _modals.push(_newModals[i]);
+                }
+            }
+            _this.setState({
+                modals: _modals
+            });
         };
         _this.removeModal = function (modalId) {
-            // let _modals = this.state.modals ? this.state.modals : [],
-            //     _modalId = Array.isArray(modalId) ? modalId : [modalId],
-            //     _index;
-            // for (let i = 0; i < _modalId.length; i++) {
-            //     _index = _.findIndex(_modals, {
-            //         modalId: _modalId[i]
-            //     });
-            //     if (_index !== -1)
-            //         _modals.splice(_index, 1);
-            // }
-            // this.setState({
-            //     modals: _modals
-            // });
+            var _modals = _this.state.modals ? _this.state.modals : [], _modalId = Array.isArray(modalId) ? modalId : [modalId], _index;
+            for (var i = 0; i < _modalId.length; i++) {
+                _index = _.findIndex(_modals, {
+                    modalId: _modalId[i]
+                });
+                if (_index !== -1)
+                    _modals.splice(_index, 1);
+            }
+            _this.setState({
+                modals: _modals
+            });
         };
         _this.showModal = function (modalId) {
-            // let _modals = this.state.modals ? this.state.modals : [],
-            //     _modalId = Array.isArray(modalId) ? modalId : [modalId],
-            //     _index;
-            // for (let i = 0; i < _modalId.length; i++) {
-            //     _index = _.findIndex(_modals, {
-            //         modalId: _modalId[i]
-            //     });
-            //     if (_index !== -1) {
-            //         _modals[_index].show = true;
-            //     }
-            // }
-            // this.setState({
-            //     modals: _modals
-            // });
+            var _modals = _this.state.modals ? _this.state.modals : [], _modalId = Array.isArray(modalId) ? modalId : [modalId], _index;
+            for (var i = 0; i < _modalId.length; i++) {
+                _index = _.findIndex(_modals, {
+                    modalId: _modalId[i]
+                });
+                if (_index !== -1) {
+                    _modals[_index].show = true;
+                }
+            }
+            _this.setState({
+                modals: _modals
+            });
         };
         _this.showAllModal = function () {
-            // let _modals = this.state.modals ? this.state.modals : [];
-            // for (let i = 0; i < _modals.length; i++) {
-            //     _modals[i].show = true;
-            // }
-            // this.setState({
-            //     modals: _modals
-            // });
+            var _modals = _this.state.modals ? _this.state.modals : [];
+            for (var i = 0; i < _modals.length; i++) {
+                _modals[i].show = true;
+            }
+            _this.setState({
+                modals: _modals
+            });
         };
         _this.hideModal = function (modalId) {
-            // let _modals = this.state.modals ? this.state.modals : [],
-            //     _modalId = Array.isArray(modalId) ? modalId : [modalId],
-            //     _index;
-            // for (let i = 0; i < _modalId.length; i++) {
-            //     _index = _.findIndex(_modals, {
-            //         modalId: _modalId[i]
-            //     });
-            //     if (_index !== -1)
-            //         _modals[_index].show = false;
-            // }
-            // this.setState({
-            //     modals: _modals
-            // });
+            var _modals = _this.state.modals ? _this.state.modals : [], _modalId = Array.isArray(modalId) ? modalId : [modalId], _index;
+            for (var i = 0; i < _modalId.length; i++) {
+                _index = _.findIndex(_modals, {
+                    modalId: _modalId[i]
+                });
+                if (_index !== -1)
+                    _modals[_index].show = false;
+            }
+            _this.setState({
+                modals: _modals
+            });
         };
         _this.hideModalWithAnimation = function (modalId) {
-            // let _modals = this.state.modals ? this.state.modals : [],
-            //     _modalId = Array.isArray(modalId) ? modalId : [modalId],
-            //     _index;
-            // for (let i = 0; i < _modalId.length; i++) {
-            //     _index = _.findIndex(_modals, {
-            //         modalId: _modalId[i]
-            //     });
-            //     if (_index !== -1 && _modals[_index].show) {
-            //         if (this.refs[_modalId[i]])
-            //             (this.refs[_modalId[i]] as ModalPanel).dismiss();
-            //         else 
-            //             this.hideModal(_modalId[i]);
-            //     }
-            // }
+            var _modals = _this.state.modals ? _this.state.modals : [], _modalId = Array.isArray(modalId) ? modalId : [modalId], _index;
+            for (var i = 0; i < _modalId.length; i++) {
+                _index = _.findIndex(_modals, {
+                    modalId: _modalId[i]
+                });
+                if (_index !== -1 && _modals[_index].show) {
+                    if (_this.refs[_modalId[i]])
+                        _this.refs[_modalId[i]].dismiss();
+                    else
+                        _this.hideModal(_modalId[i]);
+                }
+            }
         };
         _this.hideAllModal = function () {
-            // let _modals = this.state.modals ? this.state.modals : [];
-            // for (let i = 0; i < _modals.length; i++) {
-            //     _modals[i].show = false;
-            // }
-            // this.setState({
-            //     modals: _modals
-            // });
+            var _modals = _this.state.modals ? _this.state.modals : [];
+            for (var i = 0; i < _modals.length; i++) {
+                _modals[i].show = false;
+            }
+            _this.setState({
+                modals: _modals
+            });
         };
         _this.hideAllModalWithAnimation = function () {
-            // let _modals = this.state.modals ? this.state.modals : [];
-            // for (let i = _modals.length - 1; i >= 0; i--) {
-            //     this.hideModalWithAnimation(_modals[i].modalId);
-            // }
-            // setTimeout(() => {
-            //     this.setState({
-            //         animatedStyle: {},
-            //         staticStyle: (Styles.defaultAnimated as RX.Types.ViewStyle)
-            //     });
-            // }, this.props.modalAnimationDuration);
+            var _modals = _this.state.modals ? _this.state.modals : [];
+            for (var i = _modals.length - 1; i >= 0; i--) {
+                _this.hideModalWithAnimation(_modals[i].modalId);
+            }
+            setTimeout(function () {
+                _this.setState({
+                    animatedStyle: {},
+                    staticStyle: Styles.defaultAnimated
+                });
+            }, _this.props.modalAnimationDuration);
         };
         _this._onLayout = function (e) {
-            // this.setState({
-            //     width: e.width,
-            //     height: e.height
-            // });
+            _this.setState({
+                width: e.width,
+                height: e.height
+            });
             if (typeof _this.props.onLayout === 'function')
                 _this.props.onLayout(e);
         };
         _this._renderModal = function () {
-            // let _popup = [], _topIndex = 0;
-            // this._activeModal = '';
-            // for (let i = 0; i < this.state.modals.length; i++) {
-            //     if (this.state.modals[i].show) {
-            //         this._activeModal = this.state.modals[i].modalId;
-            //         _topIndex = i;
-            //         _popup.push((
-            //             <ModalPanel 
-            //                 width={this.state.width} 
-            //                 height={this.state.height} 
-            //                 wrapper={ this } 
-            //                 modalId={ this.state.modals[i].modalId } 
-            //                 size={ this.state.modals[i].size } 
-            //                 position={ this.state.modals[i].position }
-            //                 maskStyle={ this.state.modals[i].maskStyle } 
-            //                 maskFadeInOut={ this.state.modals[i].maskFadeInOut }
-            //                 configType={ this.state.modals[i].configType }
-            //                 pressMaskToClose={ this.state.modals[i].pressMaskToClose } 
-            //                 wrapperAnimation={ this.state.modals[i].wrapperAnimation }
-            //                 duration={ this.props.modalAnimationDuration } 
-            //                 key={this.state.modals[i].modalId}
-            //             >
-            //                 { this.state.modals[i].ele }
-            //             </ModalPanel>
-            //         ));
-            //     }
-            // }
-            // if (_popup.length > 0) {
-            //     _popup[_popup.length - 1] = (
-            //         <ModalPanel 
-            //             width={this.state.width} 
-            //             height={this.state.height} 
-            //             wrapper={ this } 
-            //             modalId={ this.state.modals[_topIndex].modalId } 
-            //             size={ this.state.modals[_topIndex].size } 
-            //             position={ this.state.modals[_topIndex].position }
-            //             maskStyle={ this.state.modals[_topIndex].maskStyle } 
-            //             maskFadeInOut={ this.state.modals[_topIndex].maskFadeInOut }
-            //             configType={ this.state.modals[_topIndex].configType }
-            //             pressMaskToClose={ this.state.modals[_topIndex].pressMaskToClose } 
-            //             wrapperAnimation={ this.state.modals[_topIndex].wrapperAnimation }
-            //             duration={ this.props.modalAnimationDuration } 
-            //             key={this.state.modals[_topIndex].modalId}
-            //             ref={this.state.modals[_topIndex].modalId}
-            //             active={ true }
-            //         >
-            //             { this.state.modals[_topIndex].ele }
-            //         </ModalPanel>
-            //     );
-            // }
-            // return _popup;
+            var _popup = [], _topIndex = 0;
+            _this._activeModal = '';
+            for (var i = 0; i < _this.state.modals.length; i++) {
+                if (_this.state.modals[i].show) {
+                    _this._activeModal = _this.state.modals[i].modalId;
+                    _topIndex = i;
+                    _popup.push((RX.createElement(ModalPanel, { width: _this.state.width, height: _this.state.height, wrapper: _this, modalId: _this.state.modals[i].modalId, size: _this.state.modals[i].size, position: _this.state.modals[i].position, maskStyle: _this.state.modals[i].maskStyle, maskFadeInOut: _this.state.modals[i].maskFadeInOut, configType: _this.state.modals[i].configType, pressMaskToClose: _this.state.modals[i].pressMaskToClose, wrapperAnimation: _this.state.modals[i].wrapperAnimation, duration: _this.props.modalAnimationDuration, key: _this.state.modals[i].modalId }, _this.state.modals[i].ele)));
+                }
+            }
+            if (_popup.length > 0) {
+                _popup[_popup.length - 1] = (RX.createElement(ModalPanel, { width: _this.state.width, height: _this.state.height, wrapper: _this, modalId: _this.state.modals[_topIndex].modalId, size: _this.state.modals[_topIndex].size, position: _this.state.modals[_topIndex].position, maskStyle: _this.state.modals[_topIndex].maskStyle, maskFadeInOut: _this.state.modals[_topIndex].maskFadeInOut, configType: _this.state.modals[_topIndex].configType, pressMaskToClose: _this.state.modals[_topIndex].pressMaskToClose, wrapperAnimation: _this.state.modals[_topIndex].wrapperAnimation, duration: _this.props.modalAnimationDuration, key: _this.state.modals[_topIndex].modalId, ref: _this.state.modals[_topIndex].modalId, active: true }, _this.state.modals[_topIndex].ele));
+            }
+            return _popup;
         };
         _this._style = _.compact([Styles.defaultWrapper, _this.props.style]);
         _this.state = {
@@ -31381,7 +31334,10 @@ var WrapperView = (function (_super) {
         this.setActive();
     };
     WrapperView.prototype.render = function () {
-        return (RX.createElement(RX.View, { style: this._style, accessibilityLabel: this.props.accessibilityLabel, accessibilityTraits: this.props.accessibilityTraits, importantForAccessibility: this.props.importantForAccessibility, animateChildEnter: this.props.animateChildEnter, animateChildLeave: this.props.animateChildLeave, animateChildMove: this.props.animateChildMove, ariaLabelledBy: this.props.ariaLabelledBy, blockPointerEvents: this.props.blockPointerEvents, id: this.props.id, ignorePointerEvents: this.props.ignorePointerEvents, restrictFocusWithin: this.props.restrictFocusWithin, limitFocusWithin: this.props.limitFocusWithin, importantForLayout: this.props.importantForLayout, onDragEnter: this.props.onDragEnter, onDragOver: this.props.onDragOver, onDragLeave: this.props.onDragLeave, onDrop: this.props.onDrop, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave, onMouseMove: this.props.onMouseMove, onMouseOver: this.props.onMouseOver, onContextMenu: this.props.onContextMenu, onPress: this.props.onPress, onLongPress: this.props.onLongPress, onMoveShouldSetResponder: this.props.onMoveShouldSetResponder, onMoveShouldSetResponderCapture: this.props.onMoveShouldSetResponderCapture, onResponderGrant: this.props.onResponderGrant, onResponderReject: this.props.onResponderReject, onResponderRelease: this.props.onResponderRelease, onResponderStart: this.props.onResponderStart, onResponderMove: this.props.onResponderMove, onResponderEnd: this.props.onResponderEnd, onResponderTerminate: this.props.onResponderTerminate, onResponderTerminationRequest: this.props.onResponderTerminationRequest, onStartShouldSetResponder: this.props.onStartShouldSetResponder, onStartShouldSetResponderCapture: this.props.onStartShouldSetResponderCapture, onLayout: this._onLayout, shouldRasterizeIOS: this.props.shouldRasterizeIOS, tabIndex: this.props.tabIndex, title: this.props.title, viewLayerTypeAndroid: this.props.viewLayerTypeAndroid, disableTouchOpacityAnimation: this.props.disableTouchOpacityAnimation, activeOpacity: this.props.activeOpacity, underlayColor: this.props.underlayColor }, this.props.children));
+        return (RX.createElement(RX.View, { style: this._style, accessibilityLabel: this.props.accessibilityLabel, accessibilityTraits: this.props.accessibilityTraits, importantForAccessibility: this.props.importantForAccessibility, animateChildEnter: this.props.animateChildEnter, animateChildLeave: this.props.animateChildLeave, animateChildMove: this.props.animateChildMove, ariaLabelledBy: this.props.ariaLabelledBy, blockPointerEvents: this.props.blockPointerEvents, id: this.props.id, ignorePointerEvents: this.props.ignorePointerEvents, restrictFocusWithin: this.props.restrictFocusWithin, limitFocusWithin: this.props.limitFocusWithin, importantForLayout: this.props.importantForLayout, onDragEnter: this.props.onDragEnter, onDragOver: this.props.onDragOver, onDragLeave: this.props.onDragLeave, onDrop: this.props.onDrop, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave, onMouseMove: this.props.onMouseMove, onMouseOver: this.props.onMouseOver, onContextMenu: this.props.onContextMenu, onPress: this.props.onPress, onLongPress: this.props.onLongPress, onMoveShouldSetResponder: this.props.onMoveShouldSetResponder, onMoveShouldSetResponderCapture: this.props.onMoveShouldSetResponderCapture, onResponderGrant: this.props.onResponderGrant, onResponderReject: this.props.onResponderReject, onResponderRelease: this.props.onResponderRelease, onResponderStart: this.props.onResponderStart, onResponderMove: this.props.onResponderMove, onResponderEnd: this.props.onResponderEnd, onResponderTerminate: this.props.onResponderTerminate, onResponderTerminationRequest: this.props.onResponderTerminationRequest, onStartShouldSetResponder: this.props.onStartShouldSetResponder, onStartShouldSetResponderCapture: this.props.onStartShouldSetResponderCapture, onLayout: this._onLayout, shouldRasterizeIOS: this.props.shouldRasterizeIOS, tabIndex: this.props.tabIndex, title: this.props.title, viewLayerTypeAndroid: this.props.viewLayerTypeAndroid, disableTouchOpacityAnimation: this.props.disableTouchOpacityAnimation, activeOpacity: this.props.activeOpacity, underlayColor: this.props.underlayColor },
+            RX.createElement(RX.Animated.View, { style: [this.state.staticStyle, this.state.animatedStyle] },
+                RX.createElement(RX.View, { ref: 'content', limitFocusWithin: true, style: { width: this.state.width, height: this.state.height } }, this.props.children)),
+            this._renderModal()));
     };
     return WrapperView;
 }(RX.Component));
