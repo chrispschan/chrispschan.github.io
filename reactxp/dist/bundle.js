@@ -29024,7 +29024,7 @@ var ReactDOM = __webpack_require__(3);
 var RX = __webpack_require__(0);
 var NavigatorRX_1 = __webpack_require__(20);
 var Badges = __webpack_require__(211);
-var Banner = __webpack_require__(212);
+// import Banner = require('./library/Banner');
 var Card = __webpack_require__(215);
 var CheckboxGroup = __webpack_require__(216);
 var RadioGroup = __webpack_require__(223);
@@ -29207,11 +29207,14 @@ var MainPanel = (function (_super) {
                                 }
                             ] }, "Button 4"))),
                 RX.createElement(Card, null,
-                    RX.createElement(Banner, { source: 'https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png', radius: [2, 2, 0, 0] },
-                        RX.createElement(TextRX.H2, { style: { color: '#ffffff', alignSelf: 'center' } }, "Banner")),
                     RX.createElement(RX.View, { style: { padding: 16 } },
                         RX.createElement(TextRX.H3, { style: { fontWeight: 'bold', fontSize: 16, paddingBottom: 16 } }, "Header"),
                         RX.createElement(TextRX.P, { style: { fontSize: 16 } }, "The British use the term \"header\", but the American term \"head-shot\" the English simply refuse to adopt.")))));
+            // <Banner source={ 'https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png' } radius={[ 2, 2, 0, 0 ]}>
+            //     <TextRX.H2 style={{ color: '#ffffff', alignSelf: 'center' }}>
+            //         Banner
+            //     </TextRX.H2>
+            // </Banner>
         };
         _this._onFocus = function () {
             ReactDOM.findDOMNode(_this.refs.header1).focus();
@@ -29880,87 +29883,7 @@ module.exports = Badges;
 
 
 /***/ }),
-/* 212 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var _ = __webpack_require__(12);
-var RX = __webpack_require__(0);
-var Banner = (function (_super) {
-    __extends(Banner, _super);
-    function Banner(props) {
-        var _this = _super.call(this, props) || this;
-        _this.state = {
-            bannerH: 0,
-            imgW: 0,
-            imgH: 0,
-            viewW: 0
-        };
-        _this._defaultStyle = {
-            flex: 1
-        };
-        _this._style = {};
-        _this._imgStyle = {};
-        _this._onLayout = function (e) {
-            var _bannerH = _this._calHeight(_this.state.imgH, _this.state.imgW, e.width);
-            _this.setState({ viewW: e.width, bannerH: _bannerH });
-            if (typeof _this.props.onLayout === 'function')
-                _this.props.onLayout(e);
-        };
-        _this._onLoad = function (size) {
-            if (typeof size.height === 'number') {
-                var _bannerH = _this._calHeight(size.height, size.width, _this.state.viewW);
-                _this.setState({ imgH: size.height, imgW: size.width, bannerH: _bannerH });
-            }
-        };
-        _this._calHeight = function (imgH, imgW, viewW) {
-            var _bannerH = imgH / imgW * viewW;
-            if (_bannerH < 0)
-                _bannerH = 0;
-            return _bannerH;
-        };
-        if (props.radius) {
-            if (Array.isArray(props.radius)) {
-                _this._defaultStyle.borderTopLeftRadius = props.radius.length > 1 ? props.radius[0] : 0;
-                _this._defaultStyle.borderTopRightRadius = props.radius.length > 2 ? props.radius[1] : 0;
-                _this._defaultStyle.borderBottomRightRadius = props.radius.length > 3 ? props.radius[2] : 0;
-                _this._defaultStyle.borderBottomLeftRadius = props.radius.length > 4 ? props.radius[3] : 0;
-            }
-            else {
-                _this._defaultStyle.borderRadius = props.radius;
-            }
-        }
-        _this.state = {
-            bannerH: 0,
-            imgW: 0,
-            imgH: 0,
-            viewW: 0
-        };
-        _this._style = _.compact([_this._defaultStyle, _this.props.style]);
-        _this._imgStyle = _.compact([_this._defaultStyle, { height: 0 }, RX.Platform.getType() === 'web' ? { transition: 'height 0.2s, width 0.2s' } : {}]);
-        return _this;
-    }
-    Banner.prototype.render = function () {
-        return (RX.createElement(RX.View, { style: this._style, accessibilityLabel: this.props.accessibilityLabel, accessibilityTraits: this.props.accessibilityTraits, importantForAccessibility: this.props.importantForAccessibility, animateChildEnter: this.props.animateChildEnter, animateChildLeave: this.props.animateChildLeave, animateChildMove: this.props.animateChildMove, ariaLabelledBy: this.props.ariaLabelledBy, blockPointerEvents: this.props.blockPointerEvents, id: this.props.id, ignorePointerEvents: this.props.ignorePointerEvents, restrictFocusWithin: this.props.restrictFocusWithin, limitFocusWithin: this.props.limitFocusWithin, importantForLayout: this.props.importantForLayout, onDragEnter: this.props.onDragEnter, onDragOver: this.props.onDragOver, onDragLeave: this.props.onDragLeave, onDrop: this.props.onDrop, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave, onMouseMove: this.props.onMouseMove, onMouseOver: this.props.onMouseOver, onContextMenu: this.props.onContextMenu, onPress: this.props.onPress, onLongPress: this.props.onLongPress, onMoveShouldSetResponder: this.props.onMoveShouldSetResponder, onMoveShouldSetResponderCapture: this.props.onMoveShouldSetResponderCapture, onResponderGrant: this.props.onResponderGrant, onResponderReject: this.props.onResponderReject, onResponderRelease: this.props.onResponderRelease, onResponderStart: this.props.onResponderStart, onResponderMove: this.props.onResponderMove, onResponderEnd: this.props.onResponderEnd, onResponderTerminate: this.props.onResponderTerminate, onResponderTerminationRequest: this.props.onResponderTerminationRequest, onStartShouldSetResponder: this.props.onStartShouldSetResponder, onStartShouldSetResponderCapture: this.props.onStartShouldSetResponderCapture, onLayout: this._onLayout, shouldRasterizeIOS: this.props.shouldRasterizeIOS, tabIndex: this.props.tabIndex, title: this.props.title, viewLayerTypeAndroid: this.props.viewLayerTypeAndroid, disableTouchOpacityAnimation: this.props.disableTouchOpacityAnimation, activeOpacity: this.props.activeOpacity, underlayColor: this.props.underlayColor },
-            RX.createElement(RX.Image, { source: this.props.source, onLoad: this._onLoad, style: [this._imgStyle, { height: this.state.bannerH ? this.state.bannerH : 0 }], resizeMode: 'cover' }, this.props.children)));
-    };
-    return Banner;
-}(RX.Component));
-module.exports = Banner;
-
-
-/***/ }),
+/* 212 */,
 /* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
