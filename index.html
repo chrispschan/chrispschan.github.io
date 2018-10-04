@@ -23,9 +23,12 @@
     <meta property="og:url" content="" />
     <!-- for Twitter -->
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="HTML5 Template" />
-    <meta property="twitter:description" content="HTML5 template with Gulp.js" />
-    <meta property="twitter:image" content="" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+    <meta name="twitter:title" content="HTML5 Template" />
+    <meta name="twitter:description" content="HTML5 template with Gulp.js" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:image:alt" content="" />
 
     <!-- disable telephone number detection -->
     <meta name="format-detection" content="telephone=no">
@@ -39,36 +42,20 @@
     <title>HTML5 Template</title>
 
     <!-- Standard favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Recommended favicon format -->
+    <link rel="icon" type="image/png" href="/favicon-32x32.png">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/coast-228x228.png">
+    <!-- Helps prevent duplicate content issues -->
+    <link rel="canonical" href="/index.html">
 
     <!-- style -->
-    <link rel="stylesheet" type="text/css" href="/assets/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
 
 </head>
 
 <body>
-
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId: '306204143496041',
-                autoLogAppEvents: true,
-                xfbml: true,
-                version: 'v3.1'
-            });
-        };
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
     <!-- .innerWrapper -->
     <div class="innerWrapper">
         <h1>HTML5 Template</h1>
@@ -93,28 +80,19 @@
             </li>
         </ul>
 
-        <div class="fb-share-button" data-layout="button">
-        </div>
+        <a href="https://chrispschan.github.io/index.html" class="socialMedia" data-type="facebook">facebook</a>
 
-        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
-        </div>
+        <a href="https://chrispschan.github.io/index.html" class="socialMedia" data-type="twitter">twitter</a>
 
-        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count">
-        </div>
+        <a href="https://chrispschan.github.io/index.html" class="socialMedia" data-type="wechat">wechat</a>
 
-        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="box_count">
-        </div>
+        <a href="https://chrispschan.github.io/index.html" class="socialMedia" data-type="wechat">whatsapp</a>
 
-        <button class="fb-share-custom">Share</button>
-
-        <div data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small" data-mobile-iframe="true">
-            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
-        </div>
     </div>
 
     <!-- scripts -->
 
-    <script type="text/javascript" src="/assets/js/test.js"></script>
+    <script type="text/javascript" src="/js/babel.js"></script>
 
 </body>
 
