@@ -1,34 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="" dir="ltr">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="">
 
     <!-- Microsoft Tiles -->
     <meta name="msapplication-config" content="browserconfig.xml">
 
-    <meta name="description" content="HTML5 template with Gulp.js" />
-    <meta name="keywords" content="html5, template, gulp" />
-    <meta name="author" content="Chris Chan" />
-    <meta name="copyright" content="Chris Chan" />
+    <meta name="description" content="Shortcode">
+    <meta name="keywords" content="shortcode">
+    <meta name="author" content="Chris Chan">
+    <meta name="copyright" content="Chris Chan">
 
     <!-- Share Information-->
     <!-- for Facebook & LinkedIn -->
-    <meta property="og:title" content="HTML5 Template" />
-    <meta property="og:description" content="HTML5 template with Gulp.js" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
+    <meta property="og:title" content="Shortcode">
+    <meta property="og:description" content="Shortcode">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
     <!-- for Twitter -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="" />
-    <meta name="twitter:creator" content="" />
-    <meta name="twitter:title" content="HTML5 Template" />
-    <meta name="twitter:description" content="HTML5 template with Gulp.js" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:image:alt" content="" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:title" content="Shortcode">
+    <meta name="twitter:description" content="Shortcode">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:image:alt" content="">
 
     <!-- disable telephone number detection -->
     <meta name="format-detection" content="telephone=no">
@@ -39,7 +39,7 @@
     <!-- disable email detection -->
     <meta name="format-detection" content="email=no">
 
-    <title>HTML5 Template</title>
+    <title>Shortcode</title>
 
     <!-- Standard favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -51,48 +51,26 @@
     <link rel="canonical" href="/index.html">
 
     <!-- style -->
-    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/shortcode.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
 
 </head>
 
 <body>
     <!-- .innerWrapper -->
     <div class="innerWrapper">
-        <h1>HTML5 Template</h1>
+        <h1>Shortcode</h1>
 
-        <p>HTML5 template with
-            <a href="https://gulpjs.com/" target="_blank">Gulp.js</a>
-        </p>
+        <h2>Map</h2>
 
-        <p>
-            <strong>Development tools:</strong>
-        </p>
-
-        <ul>
-            <li>
-                <a href="https://babeljs.io/" target="_blank">Babel</a>
-            </li>
-            <li>
-                <a href="http://sass-lang.com/" target="_blank">SCSS</a>
-            </li>
-            <li>
-                <a href="https://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a>
-            </li>
-        </ul>
-
-        <a href="https://chrispschan.github.io/index.html" class="socialMedia" data-type="facebook">facebook</a>
-
-        <a href="https://chrispschan.github.io/index.html" class="socialMedia" data-type="twitter">twitter</a>
-
-        <a href="https://chrispschan.github.io/index.html" class="socialMedia" data-type="wechat">wechat</a>
-
-        <a href="https://chrispschan.github.io/index.html" class="socialMedia" data-type="whatsapp">whatsapp</a>
+        <!--#include virtual="/map/toggleMarker.html"-->
 
     </div>
 
     <!-- scripts -->
-
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDWiNjmhLiH5KHrqKQL-mNN9gZ0GpzZvM"></script>
     <script type="text/javascript" src="/js/babel.js"></script>
+    <script type="text/javascript" src="/js/shortcode.js"></script>
 
 </body>
 
