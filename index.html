@@ -61,111 +61,576 @@
     <div class="innerWrapper">
         <h1>Shortcode</h1>
 
+        <h2>common</h2>
+
+        <div class="demo">
+
+            <h3>Color</h3>
+
+            <div class="shortcode-color">
+
+                <div class="shortcode-color__item">
+                    <div class="shortcode-color__item__color black-background"></div>
+                    <p class="shortcode-color__item__name">black
+                        <br>#000000</p>
+                    <div class="shortcode-color__item__code">
+                        <pre class="language-scss"><code class="language-scss prism">.black, .black-background, .black-border</code></pre>
+                    </div>
+                </div>
+
+                <div class="shortcode-color__item">
+                    <div class="shortcode-color__item__color gray-background"></div>
+                    <p class="shortcode-color__item__name">gray
+                        <br>#dddddd</p>
+                    <div class="shortcode-color__item__code">
+                        <pre class="language-scss"><code class="language-scss prism">.gray, .gray-background, .gray-border</code></pre>
+                    </div>
+                </div>
+
+                <div class="shortcode-color__item">
+                    <div class="shortcode-color__item__color white-background"></div>
+                    <p class="shortcode-color__item__name">white
+                        <br>#ffffff</p>
+                    <div class="shortcode-color__item__code">
+                        <pre class="language-scss"><code class="language-scss prism">.white, .white-background, .white-border</code></pre>
+                    </div>
+                </div>
+
+                <div class="shortcode-color__item">
+                    <div class="shortcode-color__item__color blue-background"></div>
+                    <p class="shortcode-color__item__name">blue
+                        <br>#1a0dab</p>
+                    <div class="shortcode-color__item__code">
+                        <pre class="language-scss"><code class="language-scss prism">.blue, .blue-background, .blue-border</code></pre>
+                    </div>
+                </div>
+
+                <div class="shortcode-color__item">
+                    <div class="shortcode-color__item__color purple-background"></div>
+                    <p class="shortcode-color__item__name">purple
+                        <br>#690690</p>
+                    <div class="shortcode-color__item__code">
+                        <pre class="language-scss"><code class="language-scss prism">.purple, .purple-background, .purple-border</code></pre>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="demo">
+
+            <h3>Font Size</h3>
+
+            <p class="h1">h1: font size - 32px, line height - 36px</p>
+            <pre class="language-scss"><code class="language-scss prism">.h1, .h1-size, .h1px, .h1px-size</code></pre>
+
+            <p class="h2">h2: font size - 28px, line height - 32px</p>
+            <pre class="language-scss"><code class="language-scss prism">.h2, .h2-size, .h2px, .h2px-size</code></pre>
+
+            <p class="h3">h3: font size - 24px, line height - 28px</p>
+            <pre class="language-scss"><code class="language-scss prism">.h3, .h3-size, .h3px, .h3px-size</code></pre>
+
+            <p class="h4">h4: font size - 16px, line height - 20px</p>
+            <pre class="language-scss"><code class="language-scss prism">.h4, .h4-size, .h4px, .h4px-size</code></pre>
+
+            <p class="h5">h5: font size - 14px, line height - 18px</p>
+            <pre class="language-scss"><code class="language-scss prism">.h5, .h5-size, .h5px, .h5px-size</code></pre>
+
+            <p class="h6">h6: font size - 12px, line height - 16px</p>
+            <pre class="language-scss"><code class="language-scss prism">.h6, .h6-size, .h6px, .h6px-size</code></pre>
+
+        </div>
+
+        <div class="demo">
+
+            <h3>Typography</h3>
+
+            <h1>h1 tag</h1>
+            <h2>h2 tag</h2>
+            <h3>h3 tag</h3>
+            <h4>h4 tag</h4>
+            <h5>h5 tag</h5>
+            <h6>h6 tag</h6>
+            <p>p tag
+                <b>b tag</b>
+                <i>i tag</i>
+                <u>u tag</u>
+                <sup>sup tag</sup>
+                <sub>sub tag</sub>
+                <strong>strong tag</strong>
+                <small>small tag</small>
+                <big>big tag</big>
+                <a href="#">a tag</a>
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem veniam eum neque dolorem architecto quos debitis vitae provident perspiciatis blanditiis nesciunt quasi ut facilis voluptatum perferendis, nihil, itaque recusandae maxime.</p>
+
+        </div>
+
+        <div class="demo">
+
+            <h3>Input</h3>
+
+            <h4>input[type="checkbox"]</h4>
+            <div>
+                <label for="checkboxInputDemo1-1">Default 1</label>
+                <input name="checkboxInputDemo1" type="checkbox" id="checkboxInputDemo1-1" checked>
+                <label for="checkboxInputDemo1-2">Default 2</label>
+                <input name="checkboxInputDemo1" type="checkbox" id="checkboxInputDemo1-2">
+
+            </div>
+            <div>
+                <label for="checkboxInputDemo2-1">Disabled 1</label>
+                <input name="checkboxInputDemo2" type="checkbox" id="checkboxInputDemo2-1" disabled checked>
+                <label for="checkboxInputDemo2-2">Disabled 2</label>
+                <input name="checkboxInputDemo2" type="checkbox" id="checkboxInputDemo2-2" disabled>
+
+            </div>
+
+            <h4>input[type="color"]</h4>
+            <div>
+                <label for="colorInputDemo1">Default</label>
+                <br>
+                <input type="color" id="colorInputDemo1">
+            </div>
+            <div>
+                <label for="colorInputDemo2">Disabled</label>
+                <br>
+                <input type="color" id="colorInputDemo2" disabled>
+            </div>
+
+            <h4>input[type="date"]</h4>
+            <div>
+                <label for="dateInputDemo1">Default</label>
+                <br>
+                <input type="date" id="dateInputDemo1">
+            </div>
+            <div>
+                <label for="dateInputDemo2">Disabled</label>
+                <br>
+                <input type="date" id="dateInputDemo2" disabled>
+            </div>
+            <div>
+                <label for="dateInputDemo3">Readonly</label>
+                <br>
+                <input type="date" id="dateInputDemo3" readonly>
+            </div>
+
+            <h4>input[type="datetime-local"]</h4>
+            <div>
+                <label for="datetime-localInputDemo1">Default</label>
+                <br>
+                <input type="datetime-local" id="datetime-localInputDemo1">
+            </div>
+            <div>
+                <label for="datetime-localInputDemo2">Disabled</label>
+                <br>
+                <input type="datetime-local" id="datetime-localInputDemo2" disabled>
+            </div>
+            <div>
+                <label for="datetime-localInputDemo3">Readonly</label>
+                <br>
+                <input type="datetime-local" id="datetime-localInputDemo3" readonly>
+            </div>
+
+            <h4>input[type="email"]</h4>
+            <div>
+                <label for="emailInputDemo1">Default</label>
+                <br>
+                <input type="email" id="emailInputDemo1" placeholder="email">
+            </div>
+            <div>
+                <label for="emailInputDemo2">Disabled</label>
+                <br>
+                <input type="email" id="emailInputDemo2" disabled placeholder="email" value="Demo Text">
+            </div>
+            <div>
+                <label for="emailInputDemo3">Readonly</label>
+                <br>
+                <input type="email" id="emailInputDemo3" readonly placeholder="email" value="Demo Text">
+            </div>
+
+            <h4>input[type="file"]</h4>
+            <div>
+                <label for="fileInputDemo1">Default</label>
+                <br>
+                <input type="file" id="fileInputDemo1">
+            </div>
+            <div>
+                <label for="fileInputDemo2">Disabled</label>
+                <br>
+                <input type="file" id="fileInputDemo2" disabled>
+            </div>
+
+            <h4>input[type="month"]</h4>
+            <div>
+                <label for="monthInputDemo1">Default</label>
+                <br>
+                <input type="month" id="monthInputDemo1">
+            </div>
+            <div>
+                <label for="monthInputDemo2">Disabled</label>
+                <br>
+                <input type="month" id="monthInputDemo2" disabled>
+            </div>
+            <div>
+                <label for="monthInputDemo3">Readonly</label>
+                <br>
+                <input type="month" id="monthInputDemo3" readonly>
+            </div>
+
+            <h4>input[type="number"]</h4>
+            <div>
+                <label for="numberInputDemo1">Default</label>
+                <br>
+                <input type="number" id="numberInputDemo1" placeholder="number">
+            </div>
+            <div>
+                <label for="numberInputDemo2">Disabled</label>
+                <br>
+                <input type="number" id="numberInputDemo2" disabled placeholder="number" value="666">
+            </div>
+            <div>
+                <label for="numberInputDemo3">Readonly</label>
+                <br>
+                <input type="number" id="numberInputDemo3" readonly placeholder="number" value="666">
+            </div>
+
+            <h4>input[type="password"]</h4>
+            <div>
+                <label for="passwordInputDemo1">Default</label>
+                <br>
+                <input type="password" id="passwordInputDemo1" placeholder="password">
+            </div>
+            <div>
+                <label for="passwordInputDemo2">Disabled</label>
+                <br>
+                <input type="password" id="passwordInputDemo2" disabled placeholder="password" value="Demo Text">
+            </div>
+            <div>
+                <label for="passwordInputDemo3">Readonly</label>
+                <br>
+                <input type="password" id="passwordInputDemo3" readonly placeholder="password" value="Demo Text">
+            </div>
+
+            <h4>input[type="radio"]</h4>
+            <div>
+                <label for="radioInputDemo1-1">Default 1</label>
+                <input name="radioInputDemo1" type="radio" id="radioInputDemo1-1" checked>
+                <label for="radioInputDemo1-2">Default 2</label>
+                <input name="radioInputDemo1" type="radio" id="radioInputDemo1-2">
+
+            </div>
+            <div>
+                <label for="radioInputDemo2-1">Disabled 1</label>
+                <input name="radioInputDemo2" type="radio" id="radioInputDemo2-1" disabled checked>
+                <label for="radioInputDemo2-2">Disabled 2</label>
+                <input name="radioInputDemo2" type="radio" id="radioInputDemo2-2" disabled>
+
+            </div>
+
+            <h4>input[type="range"]</h4>
+            <div>
+                <label for="rangeInputDemo1">Default</label>
+                <br>
+                <input type="range" id="rangeInputDemo1">
+            </div>
+            <div>
+                <label for="rangeInputDemo2">Disabled</label>
+                <br>
+                <input type="range" id="rangeInputDemo2" disabled>
+            </div>
+
+            <h4>input[type="search"]</h4>
+            <div>
+                <label for="searchInputDemo1">Default</label>
+                <br>
+                <input type="search" id="searchInputDemo1" placeholder="search">
+            </div>
+            <div>
+                <label for="searchInputDemo2">Disabled</label>
+                <br>
+                <input type="search" id="searchInputDemo2" disabled placeholder="search" value="Demo Text">
+            </div>
+            <div>
+                <label for="searchInputDemo3">Readonly</label>
+                <br>
+                <input type="search" id="searchInputDemo3" readonly placeholder="search" value="Demo Text">
+            </div>
+
+            <h4>input[type="tel"]</h4>
+            <div>
+                <label for="telInputDemo1">Default</label>
+                <br>
+                <input type="tel" id="telInputDemo1" placeholder="tel">
+            </div>
+            <div>
+                <label for="telInputDemo2">Disabled</label>
+                <br>
+                <input type="tel" id="telInputDemo2" disabled placeholder="tel" value="666">
+            </div>
+            <div>
+                <label for="telInputDemo3">Readonly</label>
+                <br>
+                <input type="tel" id="telInputDemo3" readonly placeholder="tel" value="666">
+            </div>
+
+            <h4>input[type="text"]</h4>
+            <div>
+                <label for="textInputDemo1">Default</label>
+                <br>
+                <input type="text" id="textInputDemo1" placeholder="text">
+            </div>
+            <div>
+                <label for="textInputDemo2">Disabled</label>
+                <br>
+                <input type="text" id="textInputDemo2" disabled placeholder="text" value="Demo Text">
+            </div>
+            <div>
+                <label for="textInputDemo3">Readonly</label>
+                <br>
+                <input type="text" id="textInputDemo3" readonly placeholder="text" value="Demo Text">
+            </div>
+
+            <h4>input[type="time"]</h4>
+            <div>
+                <label for="timeInputDemo1">Default</label>
+                <br>
+                <input type="time" id="timeInputDemo1">
+            </div>
+            <div>
+                <label for="timeInputDemo2">Disabled</label>
+                <br>
+                <input type="time" id="timeInputDemo2" disabled>
+            </div>
+            <div>
+                <label for="timeInputDemo3">Readonly</label>
+                <br>
+                <input type="time" id="timeInputDemo3" readonly>
+            </div>
+
+            <h4>input[type="url"]</h4>
+            <div>
+                <label for="urlInputDemo1">Default</label>
+                <br>
+                <input type="url" id="urlInputDemo1" placeholder="url">
+            </div>
+            <div>
+                <label for="urlInputDemo2">Disabled</label>
+                <br>
+                <input type="url" id="urlInputDemo2" disabled placeholder="url" value="Demo Text">
+            </div>
+            <div>
+                <label for="urlInputDemo3">Readonly</label>
+                <br>
+                <input type="url" id="urlInputDemo3" readonly placeholder="url" value="Demo Text">
+            </div>
+
+            <h4>input[type="week"]</h4>
+            <div>
+                <label for="weekInputDemo1">Default</label>
+                <br>
+                <input type="week" id="weekInputDemo1">
+            </div>
+            <div>
+                <label for="weekInputDemo2">Disabled</label>
+                <br>
+                <input type="week" id="weekInputDemo2" disabled>
+            </div>
+            <div>
+                <label for="weekInputDemo3">Readonly</label>
+                <br>
+                <input type="week" id="weekInputDemo3" readonly>
+            </div>
+
+            <h4>select</h4>
+
+            <div>
+                <label for="selectDemo1">Default</label>
+                <br>
+                <select id="selectDemo1">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                </select>
+            </div>
+            <div>
+                <label for="selectDemo2">Disabled</label>
+                <br>
+                <select id="selectDemo2" disabled>
+                    <option>option 1</option>
+                    <option>option 2</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="demo">
+
+            <h3>Button</h3>
+
+            <button>button</button>
+            <input type="button" value="input[type='button']">
+            <input type="reset" value="input[type='reset']">
+            <input type="submit" value="input[type='submit']">
+            <button disabled>button:disabled</button>
+            <input type="button" disabled value="input[type='button']:disabled">
+            <input type="reset" disabled value="input[type='reset']:disabled">
+            <input type="submit" disabled value="input[type='submit']:disabled">
+
+        </div>
+
+        <div class="demo">
+
+            <h3>List</h3>
+
+            <ul>
+                <li>ul li 1</li>
+                <li>ul li 2</li>
+            </ul>
+
+            <ol>
+                <li>ol li 1</li>
+                <li>ol li 2</li>
+            </ol>
+
+        </div>
+
+        <div class="demo">
+
+            <h3>Table</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>td</td>
+                        <th>th 1</th>
+                        <th>th 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>th</th>
+                        <td>td 1</td>
+                        <td>td 2</td>
+
+                    </tr>
+                    <tr>
+                        <th>th</th>
+                        <td>td 1</td>
+                        <td>td 2</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
         <h2>Map</h2>
 
         <div class="demo">
 
-        <h3>Map.toggleMarker (options, marker, index = -1)</h3>
+            <h3>Map.toggleMarker (options, marker, index = -1)</h3>
 
-        <p>Show/hide/remove Map marker(s).</p>
+            <p>Show/hide/remove Map marker(s).</p>
 
-        <table width="100%">
-            <thead>
-                <tr>
-                    <th colspan="2">Parameters</th>
-                </tr>
-            </thead>
-            <tbody>
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <th colspan="2">Parameters</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                <tr>
-                    <th>options</th>
-                    <td>
+                    <tr>
+                        <th>options</th>
+                        <td>
 
-                        <b>Type: object</b>
-                        <br> Action.
-                    </td>
-                </tr>
+                            <b>Type: object</b>
+                            <br> Action.
+                        </td>
+                    </tr>
 
-                <tr>
-                    <th>marker</th>
-                    <td>
+                    <tr>
+                        <th>marker</th>
+                        <td>
 
-                        <b>Type: Map.marker | Array
-                            <Map.marker> | Map.marker.markerId | Array
-                                <Map.marker.markerId>
-                        </b>
-                        <br> Edit marker(s).
-                    </td>
-                </tr>
+                            <b>Type: Map.marker | Array
+                                <Map.marker> | Map.marker.markerId | Array
+                                    <Map.marker.markerId>
+                            </b>
+                            <br> Edit marker(s).
+                        </td>
+                    </tr>
 
-                <tr>
-                    <th>index</th>
-                    <td>
+                    <tr>
+                        <th>index</th>
+                        <td>
 
-                        <b>Type: number</b>
-                        <br> The Map index in Map.map Array. If
-                        <b>-1</b>, set all Maps in Map.map Array.
-                    </td>
-                </tr>
+                            <b>Type: number</b>
+                            <br> The Map index in Map.map Array. If
+                            <b>-1</b>, set all Maps in Map.map Array.
+                        </td>
+                    </tr>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
 
-        <table width="100%">
-            <thead>
-                <tr>
-                    <th colspan="2">Map.toggleMarker.options</th>
-                </tr>
-            </thead>
-            <tbody>
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <th colspan="2">Map.toggleMarker.options</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                <tr>
-                    <th>show</th>
-                    <td>
+                    <tr>
+                        <th>show</th>
+                        <td>
 
-                        <b>Type: boolean</b>
-                        <br> Hide marker(s) when set false.
-                    </td>
-                </tr>
+                            <b>Type: boolean</b>
+                            <br> Hide marker(s) when set false.
+                        </td>
+                    </tr>
 
-                <tr>
-                    <th>remove</th>
-                    <td>
+                    <tr>
+                        <th>remove</th>
+                        <td>
 
-                        <b>Type: boolean</b>
-                        <br> Remove marker(s) when set true.
-                    </td>
-                </tr>
+                            <b>Type: boolean</b>
+                            <br> Remove marker(s) when set true.
+                        </td>
+                    </tr>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
 
-        <div class="map mapDemoToggleMarker"></div>
+            <div class="map mapDemoToggleMarker"></div>
 
-        <div class="map mapDemoToggleMarker"></div>
+            <div class="map mapDemoToggleMarker"></div>
 
-        <label for="mapDemoToggleMarkerIndex">index:</label>
-        <input type="number" name="mapIndex" id="mapDemoToggleMarkerIndex" value="-1">
-        <br>
-        <button id="mapDemoShowButton0">Show M0</button>
-        <button id="mapDemoHideButton0">Hide M0</button>
-        <button id="mapDemoRemoveButton0">Remove M0</button>
-        <button id="mapDemoResetButton0">Reset M0</button>
-        <br>
-        <button id="mapDemoShowButton1">Show M1</button>
-        <button id="mapDemoHideButton1">Hide M1</button>
-        <button id="mapDemoRemoveButton1">Remove M1</button>
-        <button id="mapDemoResetButton1">Reset M1</button>
-        <br>
-        <button id="mapDemoShowButton2">Show M2</button>
-        <button id="mapDemoHideButton2">Hide M2</button>
-        <button id="mapDemoRemoveButton2">Remove M2</button>
-        <button id="mapDemoResetButton2">Reset M2</button>
+            <label for="mapDemoToggleMarkerIndex">index:</label>
+            <input type="number" name="mapIndex" id="mapDemoToggleMarkerIndex" value="-1">
+            <br>
+            <button id="mapDemoShowButton0">Show M0</button>
+            <button id="mapDemoHideButton0">Hide M0</button>
+            <button id="mapDemoRemoveButton0">Remove M0</button>
+            <button id="mapDemoResetButton0">Reset M0</button>
+            <br>
+            <button id="mapDemoShowButton1">Show M1</button>
+            <button id="mapDemoHideButton1">Hide M1</button>
+            <button id="mapDemoRemoveButton1">Remove M1</button>
+            <button id="mapDemoResetButton1">Reset M1</button>
+            <br>
+            <button id="mapDemoShowButton2">Show M2</button>
+            <button id="mapDemoHideButton2">Hide M2</button>
+            <button id="mapDemoRemoveButton2">Remove M2</button>
+            <button id="mapDemoResetButton2">Reset M2</button>
 
-        <p>
-            <b>Nunjucks:</b>
-        </p>
-        <pre class="language-html"><code class="language-html prism">{% from "map/map.html" import map %}
+            <p>
+                <b>Nunjucks:</b>
+            </p>
+            <pre class="language-html"><code class="language-html prism">{% from "map/map.html" import map %}
 
 {{ map(class="mapDemoToggleMarker") }}
 {{ map(class="mapDemoToggleMarker") }}
@@ -184,10 +649,10 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mapDemoRemoveButton2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Remove M2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mapDemoResetButton2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Reset M2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
 
-        <p>
-            <b>Javascript(es6):</b>
-        </p>
-        <pre class="language-javascript"><code class="language-javascript prism"><span class="token keyword">import</span> Map <span class="token keyword">from</span> <span class="token string">'map'</span><span class="token punctuation">;</span>
+            <p>
+                <b>Javascript(es6):</b>
+            </p>
+            <pre class="language-javascript"><code class="language-javascript prism"><span class="token keyword">import</span> Map <span class="token keyword">from</span> <span class="token string">'map'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token string">'.mapDemoToggleMarker'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
     markers<span class="token punctuation">:</span> <span class="token punctuation">[</span>
@@ -258,10 +723,10 @@ map<span class="token punctuation">.</span><span class="token function">waitRead
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
-        <p>
-            <b>SCSS:</b>
-        </p>
-        <pre class="language-scss"><code class="language-scss prism"><span class="token keyword">@import</span> <span class="token string">"./src/app/map/map.mixin.scss"</span><span class="token punctuation">;</span>
+            <p>
+                <b>SCSS:</b>
+            </p>
+            <pre class="language-scss"><code class="language-scss prism"><span class="token keyword">@import</span> <span class="token string">"./src/app/map/map.mixin.scss"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">@include</span> <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token selector"><span class="token parent important">&amp;</span>.mapDemoToggleMarker </span><span class="token punctuation">{</span>
@@ -272,7 +737,7 @@ map<span class="token punctuation">.</span><span class="token function">waitRead
 <span class="token punctuation">}</span>
 </code></pre>
 
-    </div>
+        </div>
 
     </div>
 
