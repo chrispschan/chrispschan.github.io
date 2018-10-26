@@ -21,6 +21,20 @@
     <meta property="og:description" content="Shortcode">
     <meta property="og:image" content="https://chrispschan.github.io/coast-228x228.png">
     <meta property="og:url" content="">
+    
+<b:if cond='data:blog.pageType == "item"'>
+        <meta expr:content='Shortcode' property='og:title'/>
+        <meta content='article' property='og:type'/>
+    </b:if>
+    <b:if cond='data:blog.postImageUrl'>
+        <meta expr:content='https://chrispschan.github.io/coast-228x228.png' property='og:image'/>
+    <b:else/>
+    <b:if cond='data:blog.postImageThumbnailUrl'>
+        <meta expr:content='https://chrispschan.github.io/coast-228x228.png' property='og:image'/>
+    </b:if></b:if>
+    <b:if cond='data:blog.metaDescription != ""'>
+        <meta expr:content='Shortcode' name='og:description'/>
+    </b:if>
     <!-- for Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="">
